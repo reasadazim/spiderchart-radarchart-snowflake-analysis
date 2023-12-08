@@ -1,0 +1,61 @@
+body {
+    background: #1b222d;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 11px;
+    font-weight: 400;
+    fill: #242424;
+    text-align: center;
+    /* text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff; */
+    cursor: default;
+}
+
+body .chart-container .radarChart {
+    margin: auto;
+}
+
+body .chart-container .radarChart text.legend {
+    font-size: 150%;
+}
+
+@media only screen and (max-value: 200px) {
+    svg text.legend {
+        font-size: 0.8em;
+    }
+}
+
+.legend {
+    font-family: 'Raleway', sans-serif;
+    fill: #fff;
+}
+
+.tooltip {
+    fill: #fff;
+}
+
+#tooltip {
+    position: absolute;
+    width: 250px;
+    height: auto;
+    padding: 10px;
+    background-color: rgb(22, 22, 22);
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    -webkit-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    text-align: left;
+}
+
+#tooltip.hidden {
+    display: none;
+}
+
+#tooltip p {
+    margin: 0;
+    font-family: 'Roboto', Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+}
