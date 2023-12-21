@@ -273,9 +273,14 @@
 			.value(function(d) {return d.value; })
 		var data_ready = pie(d3.entries(data))
 
+        var urls = d3.scaleOrdinal()
+			.domain(data)
+			.range(["http://google.com", "http://facebook.com", "http://instagram.com", "http://twitter.com", "http://thread.com"])
 
 		blobWrapper.selectAll('whatever').data(data_ready)
 			.enter()
+            .append('a')
+            .attr('href', function(d){ return(urls(d.data.key)) })
 			.append('path')
 			.attr('d', d3.arc()
 				.innerRadius(0)
@@ -290,7 +295,6 @@
 
 		g.selectAll('.cone').on("mouseover", function(d, blobWrapper){
 		
-
 			this.setAttribute("fill", "#ffffff")
 			
             // Change this data as per requirements
@@ -303,6 +307,8 @@
 			}
 			
 			if(d.data.key == 'e'){
+                        
+
 						d3.select("#tooltip")
 						.style("left", d3.event.pageX + "px")
 						.style("top", d3.event.pageY + "px")
